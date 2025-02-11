@@ -16,7 +16,7 @@ describe('Validação do Formulário de Cadastro', () => {
     cy.get('#Nome').type(name);
     cy.get('#sexo-Masculino').click();
     cy.get('#DataNascimento').type(data);
-    cy.get('#Cep').type(data);
+    cy.get('#Cep').type(cep);
     cy.get('#Email').type(email);
     cy.get('#ConfEmail').type(email);
     cy.get('#Senha').type(password);

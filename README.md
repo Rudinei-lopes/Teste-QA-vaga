@@ -23,10 +23,11 @@ Execute  `npm test` para rodar o teste no modo headless.
 Ou, execute `npm run cy:open` para abrir o Cypress no modo interativo.
 
 
-Para testar uma nova conta por favor colocar um email novo em gerador de emails no campo "const email" no diretorio e2e/formTests.cy.js, mas coloquei uma verificação, para caso o usuário já tenha uma conta ele não quebra o teste;
+Para testar uma nova conta por favor colocar um email novo em gerador de emails ex link:https://temp-mail.org/pt/ no campo "const email" no diretorio e2e/formTests.cy.js, mas coloquei uma verificação, para caso o usuário já tenha uma conta ele não quebra o teste;
 
 ## Observação 
 Tomei a liberdade de testar o formulário do site de vocês e percebi um detalhe, quando estava automatizando os campos, que é o Campo "Confirme o e-mail" quando ele está vazio contem um texto errado na mensagem de ERRO "Campo Conf. de Senha obrigatório!" o correto seria "Campo Conf. de E-mail obrigatório!".
+
 ![EX: erro no texto de mensagem de Confirma e-mail](./docs/erro-msg-email.png)
 
 
@@ -43,7 +44,7 @@ Imagens
 ![EX: cypress files structure](./docs/validacao-teste-ui.png)
 
 
-## TESTE DE API REST
+# TESTE DE API REST
 
 ## Requisição GET
 - Utilizei o Postman para fazer as requisições e a automatização da API 
@@ -80,11 +81,45 @@ Erro tipos corretos
 - Utilizei uma APi diferente, pois a API jsonplaceholder mesmo que mande o body vazio ele aceita.
 
 Erro status 400
+
 ![EX: post error 400](./docs/erro-400-api.png)
 
 
 ### Status 500
 - Erro 500 mandei uma requisição PUT com o valor 0 (Zero) no endpoint, pois não existe id= 0 na API o que retorna erro 500 internal server
 Erro status 500
+
 ![EX: post error 500](./docs/erro-500-api.png)
 
+
+# Testes de Performance
+
+## teste de carga
+- Teste efetuado utilizando a ferramenta k6 na pasta teste-k6/performanceTestApi.js para avaliar o desempenho da API com 100 usuários simultâneos;
+- Medir o tempo médio de resposta;
+- Verificar se há erros 500 ou falhas de requisição sob carga.
+
+Cenário de Teste:
+- 100 Usuários Virtuais (VUs)
+- Duração de 30 segundos
+- Requisições contínuas durante o período
+
+## Monitoramento de desempenho e resultados
+- Status da resposta: HTTP 200 obteve sucesse;
+- 100% das requisições feitas tiveram temp de resposta a baixo dos 500ms.
+- Fiz também uma verificação que ao executar a requisição GET ele verifica se o status é 200 e depois faz o sleep de 1 segundo para cada usuário.
+
+### Métricas
+
+![EX: metricas k6](./docs/metrica-teste-k6.png)
+
+![EX: metricas k6](./docs/metrica-teste-k6-01.png)
+
+### Métricas CPU
+
+![EX: metricas k6 cpu](./docs/captura-cpu-01.png)
+
+## Teste POST criando usuários desempenho e resultados
+-  criei também um teste na pasta teste-k6/createUsers.js para verificar o desempremho e resultado da API. conclusão a API é fraca e tem poucos pontos de regras, ele aceita envios de bodys vazios, multiplos usuários duplicados entre outros
+
+![EX: metricas k6 users](./docs/resultado-teste-users.png)
