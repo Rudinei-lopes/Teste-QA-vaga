@@ -14,10 +14,6 @@ Execute `npm install` (ou `npm i` para a versão abreviada) para instalar as dep
 
 ## Testes
 
-> **Nota:** Antes de rodar os testes, faça uma cópia do arquivo `cypress.env.example.json` como `cypress.env.json`, que no mundo real você atualizaria com credenciais válidas.
-
-> O arquivo `cypress.env.json` está incluído no [`.gitignore`](./.gitignore) e você pode ficar tranquilo sabendo que informações confidenciais não serão versionadas.
-
 Execute  `npm test` para rodar o teste no modo headless.
 
 Ou, execute `npm run cy:open` para abrir o Cypress no modo interativo.
