@@ -31,10 +31,10 @@ Tomei a liberdade de testar o formulário do site de vocês e percebi um detalhe
 
 ## TESTE DE UI
 Teste automatizado efetuado seguindo os requisitos iniciais
-1- Preencher o formulário corretamente e enviar → Deve exibir mensagem de sucesso.
-2- Deixar campos obrigatórios vazios → Deve exibir mensagens de erro.
-3- Digitar uma senha fraca (exemplo: "12345") → Deve exibir erro de validação.
-4- Digitar e-mails diferentes nos campos de "E-mail" e "Confirmação de E-mail" → Deve exibir erro.
+- Preencher o formulário corretamente e enviar → Deve exibir mensagem de sucesso.
+- Deixar campos obrigatórios vazios → Deve exibir mensagens de erro.
+- Digitar uma senha fraca (exemplo: "12345") → Deve exibir erro de validação.
+- Digitar e-mails diferentes nos campos de "E-mail" e "Confirmação de E-mail" → Deve exibir erro.
 
 Imagens 
 ![EX: cypress files structure](./docs/validacao-teste-ui.png)
