@@ -102,7 +102,7 @@ Cenário de Teste:
 
 ## Monitoramento de desempenho e resultados
 - Status da resposta: HTTP 200 obteve sucesse;
-- 100% das requisições feitas tiveram temp de resposta a baixo dos 500ms.
+- 100% das requisições feitas tiveram tempo de resposta a baixo dos 500ms.
 - Fiz também uma verificação que ao executar a requisição GET ele verifica se o status é 200 e depois faz o sleep de 1 segundo para cada usuário.
 
 ### Métricas
@@ -116,6 +116,6 @@ Cenário de Teste:
 ![EX: metricas k6 cpu](./docs/captura-cpu-01.png)
 
 ## Teste POST criando usuários desempenho e resultados
--  criei também um teste na pasta teste-k6/createUsers.js para verificar o desempremho e resultado da API. conclusão a API é fraca e tem poucos pontos de regras, ele aceita envios de bodys vazios, multiplos usuários duplicados entre outros
+-  criei também um teste onde faço a requisição POST criando vários usuários na API, está na pasta teste-k6/createUsers.js para verificar o desempremho e resultado da API. conclusão a API deixa criar multiplos usuários duplicados, tem poucos pontos de regras, aceita envios de bodys vazios e entre outros.
 
 ![EX: metricas k6 users](./docs/resultado-teste-users.png)
