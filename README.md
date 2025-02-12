@@ -88,7 +88,7 @@ Erro status 500
 ![EX: post error 500](./docs/erro-500-api.png)
 
 
-# Testes de Performance
+# Testes de Performance com k6
 
 ## teste de carga
 - Teste efetuado utilizando a ferramenta k6 na pasta teste-k6/performanceTestApi.js para avaliar o desempenho da API com 100 usuários simultâneos;
